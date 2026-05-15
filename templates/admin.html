@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}UzbeTech - Admin Dashboard{% endblock %}
+
+{% block extra_head %}
+<style>
+    .admin-header {
+        padding: 40px 0;
+        border-bottom: 1px solid rgba(167, 235, 242, 0.1);
+        margin-bottom: 40px;
+        margin-top: 80px;
+    }
+
+    .msg-card {
+        background: rgba(38, 101, 140, 0.1);
+        border: 1px solid rgba(167, 235, 242, 0.1);
+        padding: 20px;
+        border-radius: var(--radius-md);
+        margin-bottom: 20px;
+    }
+
+    .msg-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        padding-bottom: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="min-height: 80vh;">
+    <div class="admin-header">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+                <h2>Enterprise Dashboard</h2>
+                <p style="color: var(--color-glow); opacity:0.8;">Secure System Active as {{ user.username }}</p>
+            </div>
+            <div>
+                <a href="/admin/logout" class="btn-primary"
+                    style="background: transparent; border: 1px solid var(--color-accent); font-size: 0.9em; padding: 8px 18px;">Terminate
+                    Session</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="display:flex; gap:30px;">
+        <!-- Sidebar metrics -->
+        <div style="width: 300px;">
+            <div class="glass-panel" style="margin-bottom: 20px;">
+                <h4 style="margin-bottom:5px;">Total Messages</h4>
+                <div style="font-size:2rem; color:var(--color-glow); font-family:var(--font-display); font-weight:700;">
+                    {{ messages|length }}</div>
+            </div>
+
+            <div class="glass-panel">
+                <h4 style="margin-bottom:5px;">Security Status</h4>
+                <div style="color: #4ade80; display:flex; align-items:center; gap:8px; font-size:0.9rem;">
+                    <div
+                        style="width:8px; height:8px; background:#4ade80; border-radius:50%; box-shadow: 0 0 10px #4ade80;">
+                    </div> Node Secure
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Inbox -->
+        <div style="flex:1;">
+            <h3>Encrypted Inbox</h3>
+            {% if messages %}
+            {% for msg in messages %}
+            <div class="msg-card">
+                <div class="msg-header">
+                    <div>
+                        <strong style="color:var(--color-glow);">{{ msg.name }}</strong>
+                        <span style="opacity:0.6; font-size:0.9em;">({{ msg.email }})</span>
+                        {% if msg.phone %}
+                        <span style="opacity:0.6; font-size:0.9em; margin-left:10px;">📞 {{ msg.phone }}</span>
+                        {% endif %}
+                    </div>
+                    <div style="opacity:0.5; font-size:0.8em;">{{ msg.created_at.strftime('%Y-%m-%d %H:%M') }}</div>
+                </div>
+                <div
+                    style="background: rgba(0,0,0,0.2); padding: 15px; border-radius:4px; font-family:monospace; color:#ccc;">
+                    {{ msg.content }}
+                </div>
+                <div style="margin-top: 15px; text-align:right;">
+                    <button class="btn-primary" style="padding: 6px 15px; font-size:0.8em; opacity:0.8;">Mark as
+                        Handled</button>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div
+                style="padding: 40px; text-align:center; opacity:0.5; border:1px dashed rgba(255,255,255,0.2); border-radius: var(--radius-md);">
+                Inbox is completely clear.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

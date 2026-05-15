@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}UzbeTech - About Us{% endblock %}
+
+{% block content %}
+<div style="min-height: 100vh; padding-top: 150px;" class="container page-transition">
+    <div style="text-align:center; margin-bottom: 80px;" class="reveal-up">
+        <h1 style="font-size:4rem; color:var(--color-glow);" data-i18n="about_diff">The UzbeTech Difference</h1>
+        <p style="font-size:1.2rem; opacity:0.8; max-width: 600px; margin: 0 auto;" data-i18n="about_sub">A culture built on an absolute
+            refusal to compromise on quality and security.</p>
+    </div>
+
+    <!-- About Section Content -->
+    <div style="display:flex; gap: 40px; margin-bottom: 80px; align-items:center;" class="reveal-up">
+        <div style="flex: 1;">
+            <h3 style="font-size: 2.2rem; margin-bottom: 10px;" data-i18n="about_phil">Our Philiosophy</h3>
+            <p style="opacity:0.8; margin-bottom:20px; line-height: 1.8;" data-i18n="about_phil_desc">
+                We view software not as simple code, but as digital architecture. A strong foundation requires intense
+                planning, high-end cryptographic security structures, and breathtaking design. We focus on
+                'Stripe-level' aesthetics mixed with 'Enterprise-level' security.
+            </p>
+        </div>
+        <div
+            style="flex: 1; height: 350px; background: rgba(84, 172, 191, 0.1); border-radius: var(--radius-lg); border: 1px solid rgba(167, 235, 242, 0.2); position:relative; overflow:hidden;">
+            <div
+                style="position:absolute; inset:0; background: linear-gradient(135deg, rgba(38,101,140,0.5), transparent);">
+            </div>
+            <div
+                style="position:absolute; bottom: 20px; left: 20px; font-family:var(--font-display); opacity:0.7; font-size:1.2rem;">
+                EST. 2026 // SAMARKAND</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

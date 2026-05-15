@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}UzbeTech - Portfolio{% endblock %}
+
+{% block content %}
+<div style="min-height: 100vh; padding-top: 150px;" class="container page-transition">
+    <div style="margin-bottom: 80px;" class="reveal-up">
+        <div style="display:inline-block; padding: 5px 15px; border-radius:20px; background: rgba(84,172,191,0.2); border: 1px solid rgba(84,172,191,0.4); margin-bottom: 20px;">
+            <span style="font-size:0.85em; font-weight:600; color: #A7EBF2;" data-i18n="port_badge">// PROVEN RESULTS</span>
+        </div>
+        <h1 style="font-size:4rem; color:var(--color-glow);" data-i18n="port_title">Our Global Portfolio</h1>
+    </div>
+
+    <!-- Case Study -->
+    <div style="display:flex; gap: 40px; margin-bottom: 80px; align-items:center;" class="reveal-up">
+        <div style="flex: 1; height: 350px; background: rgba(38, 101, 140, 0.4); border-radius: var(--radius-lg); border: 1px solid rgba(167, 235, 242, 0.2); position:relative; overflow:hidden;">
+            <!-- Abstract project rep -->
+            <div style="position:absolute; inset:20px; border:2px dashed rgba(255,255,255,0.2); border-radius:inherit; display:flex; justify-content:center; align-items:center;">
+                <span style="font-family:var(--font-display); opacity:0.3; letter-spacing:10px; font-size:2rem;">ALPHA HOTEL</span>
+            </div>
+        </div>
+        <div style="flex: 1;">
+            <h3 style="font-size: 2.2rem; margin-bottom: 10px;">Alpha Plaza Hospitality</h3>
+            <div style="color:var(--color-accent); font-weight:600; margin-bottom: 20px;" data-i18n="alpha_role">Role: Full-Stack Platform Engineering</div>
+            <p style="opacity:0.8; margin-bottom:20px; line-height: 1.8;" data-i18n="alpha_desc">
+                Engineered a comprehensive, ultra-premium booking platform for the Alpha Plaza Hotel in Tashkent. Handled massive concurrent API calls securely while maintaining 60fps Framer Motion interactions on the frontend.
+            </p>
+            <a href="#" class="btn-primary" style="padding: 10px 20px; font-size:0.9em;" data-i18n="btn_view_case">View Case Study</a>
+        </div>
+    </div>
+
+    <div style="display:flex; gap: 40px; margin-bottom: 80px; align-items:center; flex-direction:row-reverse;" class="reveal-up">
+        <div style="flex: 1; height: 350px; background: rgba(38, 101, 140, 0.4); border-radius: var(--radius-lg); border: 1px solid rgba(167, 235, 242, 0.2); position:relative; overflow:hidden;">
+            <!-- Abstract project rep -->
+            <div style="position:absolute; inset:20px; border:2px dashed rgba(255,255,255,0.2); border-radius:inherit; display:flex; justify-content:center; align-items:center;">
+                <span style="font-family:var(--font-display); opacity:0.3; letter-spacing:10px; font-size:2rem;">PRO CHESS AI</span>
+            </div>
+        </div>
+        <div style="flex: 1;">
+            <h3 style="font-size: 2.2rem; margin-bottom: 10px;">Pro Chess AI Engine</h3>
+            <div style="color:var(--color-accent); font-weight:600; margin-bottom: 20px;" data-i18n="chess_role">Role: Desktop/Backend Development</div>
+            <p style="opacity:0.8; margin-bottom:20px; line-height: 1.8;" data-i18n="chess_desc">
+                Developed a premium, highly scalable Desktop application connecting to deep algorithmic engines. Utilized multi-threading to handle intense computation without freezing the GUI.
+            </p>
+            <a href="#" class="btn-primary" style="padding: 10px 20px; font-size:0.9em;" data-i18n="btn_view_case">View Case Study</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

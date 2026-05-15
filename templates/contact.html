@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}UzbeTech - Contact Us{% endblock %}
+
+{% block content %}
+<div style="min-height: 80vh; padding-top: 150px; text-align:center;" class="container page-transition">
+    <div style="margin-bottom: 60px;" class="reveal-up">
+        <h1 style="font-size:4rem; color:var(--color-glow);">Get In Touch</h1>
+        <p style="font-size:1.2rem; opacity:0.8; max-width: 600px; margin: 0 auto;">Ready to escalate your digital tier? Use the portal below or the floating widget to reach out securely.</p>
+    </div>
+
+    <div class="glass-panel mx-auto reveal-up" style="max-width: 600px; margin: 0 auto; text-align:left;">
+        <form action="/api/contact" method="POST" id="main-contact-form">
+            <div style="margin-bottom: 20px;">
+                <label style="display:block; margin-bottom:5px; color:#ccc;">Name</label>
+                <input type="text" name="name" style="width:100%; padding:15px; border-radius:var(--radius-md); background:rgba(255,255,255,0.05); border:1px solid rgba(167,235,242,0.2); color:#fff; font-family:var(--font-primary);" required>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="display:block; margin-bottom:5px; color:#ccc;">Email</label>
+                <input type="email" name="email" style="width:100%; padding:15px; border-radius:var(--radius-md); background:rgba(255,255,255,0.05); border:1px solid rgba(167,235,242,0.2); color:#fff; font-family:var(--font-primary);" required>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="display:block; margin-bottom:5px; color:#ccc;">Encrypted Message</label>
+                <textarea name="content" rows="5" style="width:100%; padding:15px; border-radius:var(--radius-md); background:rgba(255,255,255,0.05); border:1px solid rgba(167,235,242,0.2); color:#fff; font-family:var(--font-primary); resize:none;" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%; font-size:1.1rem;">Submit to Server</button>
+        </form>
+    </div>
+</div>
+
+<script>
+document.getElementById('main-contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.innerText = "Transmitting...";
+    btn.disabled = true;
+    try {
+        const resp = await fetch('/api/contact', {
+            method: 'POST',
+            body: new FormData(e.target)
+        });
+        if(resp.ok) {
+            e.target.innerHTML = `<div style="text-align:center; padding:40px;"><h3 style="color:var(--color-glow);">Transmission Successful</h3><p>Our team has received your message securely.</p></div>`;
+        } else {
+            alert('Security Rate limit exceeded. Try again later.');
+            btn.innerText = "Submit to Server";
+            btn.disabled = false;
+        }
+    } catch(err) {
+        alert('Network Error');
+        btn.innerText = "Submit to Server";
+        btn.disabled = false;
+    }
+});
+</script>
+{% endblock %}

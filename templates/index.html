@@ -1,0 +1,309 @@
+{% extends 'base.html' %}
+
+{% block title %}UzbeTech - World Class IT Infrastructure{% endblock %}
+
+{% block extra_head %}
+<style>
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-top: 80px;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 800px;
+    }
+
+    .hero h1 {
+        font-size: 5rem;
+        line-height: 1.05;
+        letter-spacing: -2px;
+        margin-bottom: var(--spacing-md);
+        background: linear-gradient(135deg, #fff, var(--color-glow));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+        font-size: 1.4rem;
+        color: #A7EBF2;
+        opacity: 0.9;
+        margin-bottom: var(--spacing-lg);
+        max-width: 600px;
+    }
+
+    .hero-bg-elements {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        z-index: 1;
+    }
+
+    .tech-circle {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(167, 235, 242, 0.2);
+        box-shadow: inset 0 0 50px rgba(84, 172, 191, 0.1);
+    }
+
+    .collage-card {
+        background: rgba(38, 101, 140, 0.2);
+        backdrop-filter: blur(8px);
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid rgba(167, 235, 242, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Standard Sections */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-md);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="grid-bg"></div>
+
+<!-- Hero Section with Motion Parallax -->
+<section class="hero reveal-up active">
+    <!-- Parallax Abstract Elements -->
+    <div class="hero-bg-elements" style="right: -5%;">
+        <div class="tech-circle float-element parallax-layer" data-speed="0.8"
+            style="width: 500px; height: 500px; top: 10%; right: 10%; border-width: 2px;"></div>
+        <div class="tech-circle float-element-delayed parallax-layer" data-speed="0.4"
+            style="width: 300px; height: 300px; bottom: 20%; right: 40%;"></div>
+
+        <!-- Collage element representing code/tech -->
+        <div class="collage-card parallax-layer float-element" data-speed="0.6"
+            style="position: absolute; top: 30%; right: 20%; transform: rotate(15deg);">
+            <h4 style="color:var(--color-glow); font-family:var(--font-primary); font-size:14px;">sys_init.sh</h4>
+            <div
+                style="width: 150px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin: 10px 0;">
+            </div>
+            <div style="width: 100px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;"></div>
+        </div>
+        <!-- Collage element 2 -->
+        <div class="collage-card parallax-layer float-element-delayed" data-speed="0.3"
+            style="position: absolute; bottom: 10%; right: 5%; transform: rotate(-5deg); background: rgba(84, 172, 191, 0.1);">
+            <div
+                style="width: 200px; height: 80px; border: 1px dashed rgba(167,235,242,0.4); display:flex; align-items:center; justify-content:center;">
+                <span style="opacity: 0.5;">Secure Node Active</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container hero-content">
+        <div
+            style="display:inline-block; padding: 5px 15px; border-radius:20px; background: rgba(84,172,191,0.2); border: 1px solid rgba(84,172,191,0.4); margin-bottom: 20px;">
+            <span style="font-size:0.85em; font-weight:600; color: #A7EBF2;" data-i18n="hero_badge">// ENTERPRISE GRADE
+                PLATFORM</span>
+        </div>
+        <h1 data-i18n="hero_title">Elevating Digital <br>Infrastructure</h1>
+        <p data-i18n="hero_desc">UzbeTech provides world-class, premium, and highly secure IT solutions. Our systems are
+            built to perform, scale, and seamlessly bridge the gap between imagination and reality.</p>
+        <div style="display:flex; gap: 20px;">
+            <a href="/services" class="btn-primary" data-i18n="btn_services">Explore Services</a>
+            <a href="#contact" class="btn-primary smooth-scroll"
+                style="background: transparent; border: 1px solid var(--color-glow); box-shadow:none;"
+                data-i18n="btn_partner">Partner With Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section Deep -->
+<section class="section section-deep">
+    <div class="container reveal-up" style="display: flex; justify-content: space-around; text-align:center;">
+        <div>
+            <div style="font-size: 3rem; font-family: var(--font-display); color: var(--color-glow); font-weight:700;">
+                99.9%</div>
+            <div style="opacity: 0.7; letter-spacing:1px; font-size: 0.9em; text-transform:uppercase;"
+                data-i18n="uptime_title">Uptime Guaranteed</div>
+        </div>
+        <div>
+            <div style="font-size: 3rem; font-family: var(--font-display); color: var(--color-glow); font-weight:700;"
+                data-i18n="zero_val">Zero</div>
+            <div style="opacity: 0.7; letter-spacing:1px; font-size: 0.9em; text-transform:uppercase;"
+                data-i18n="breaches_title">Data Breaches</div>
+        </div>
+        <div>
+            <div style="font-size: 3rem; font-family: var(--font-display); color: var(--color-glow); font-weight:700;">
+                100+</div>
+            <div style="opacity: 0.7; letter-spacing:1px; font-size: 0.9em; text-transform:uppercase;"
+                data-i18n="clients_title">Enterprise Clients</div>
+        </div>
+    </div>
+</section>
+
+<!-- About Intro -->
+<section class="section">
+    <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+            <div style="max-width: 600px;" class="reveal-up">
+                <h2 style="font-size: 3rem;" data-i18n="home_about_title">Engineered for <span
+                        style="color:var(--color-accent)">Excellence</span></h2>
+                <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 30px;" data-i18n="home_about_desc">
+                    At UzbeTech, we don't just build software. We craft robust digital ecosystems. Our architecture is
+                    rooted in modern scalability principles, ensuring that your enterprise remains resilient against the
+                    threats of tomorrow.
+                </p>
+                <div class="glass-panel"
+                    style="display:inline-flex; align-items:center; gap: 15px; padding: 15px 25px;">
+                    <div
+                        style="width:40px; height:40px; border-radius:50%; background:var(--color-primary-ui); display:flex; align-items:center; justify-content:center;">
+                        🛡️</div>
+                    <div>
+                        <h4 style="margin:0; font-size:1.1rem;" data-i18n="mil_sec_title">Military-Grade Security</h4>
+                        <p style="margin:0; opacity:0.6; font-size:0.85rem;" data-i18n="mil_sec_desc">Protected API
+                            structure & Advanced Hashing</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graphic / Abstract -->
+            <div style="width: 400px; height: 500px; position:relative; margin-top:40px;"
+                class="reveal-up float-element">
+                <div class="glass-panel" style="position:absolute; inset:0; z-index:2;"></div>
+                <div
+                    style="position:absolute; top:-20px; right:-20px; width:100%; height:100%; border: 1px solid var(--color-accent); border-radius: var(--radius-lg); z-index:1;">
+                </div>
+                <div
+                    style="position:absolute; bottom:30px; left:-30px; background:var(--color-deep-sec); border:1px solid var(--color-glow); padding: 20px; z-index:3; border-radius:var(--radius-md);">
+                    <h5 style="margin:0; color:var(--color-glow);" data-i18n="sys_perf">System Performance</h5>
+                    <div
+                        style="width:150px; height:6px; background:rgba(255,255,255,0.1); margin-top:10px; border-radius:3px; overflow:hidden;">
+                        <div style="width:95%; height:100%; background:var(--color-glow);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preivew Section -->
+<section class="section section-deep">
+    <div class="container reveal-up">
+        <h2 style="text-align:center; font-size:3rem; margin-bottom:var(--spacing-lg);" data-i18n="core_cap_title">Core
+            Capabilities</h2>
+        <div class="services-grid">
+            <div class="glass-panel" style="backdrop-filter: blur(5px);">
+                <div style="color:var(--color-accent); font-size: 2rem; margin-bottom:15px;">☁️</div>
+                <h3 data-i18n="srv_cloud">Cloud Infrastructure</h3>
+                <p style="opacity: 0.8; font-size:0.95rem;" data-i18n="srv_cloud_desc">Seamless AWS, Azure, and GCP
+                    deployments built natively for robust microservices architectures.</p>
+            </div>
+            <div class="glass-panel" style="backdrop-filter: blur(5px);">
+                <div style="color:var(--color-accent); font-size: 2rem; margin-bottom:15px;">🔒</div>
+                <h3 data-i18n="srv_cyber">Cybersecurity</h3>
+                <p style="opacity: 0.8; font-size:0.95rem;" data-i18n="srv_cyber_desc">Full-stack penetration testing,
+                    cryptographic data layers, and DDoS robust API rate limiting.</p>
+            </div>
+            <div class="glass-panel" style="backdrop-filter: blur(5px);">
+                <div style="color:var(--color-accent); font-size: 2rem; margin-bottom:15px;">💻</div>
+                <h3 data-i18n="srv_web">Premium Web Apps</h3>
+                <p style="opacity: 0.8; font-size:0.95rem;" data-i18n="srv_web_desc">World-class digital agency standard
+                    applications bridging elegant UI with deep backend integrity.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact CTA Section -->
+<section class="section section-deep" id="contact"
+    style="border-top: 1px solid rgba(167,235,242,0.1); padding-bottom: 30px;">
+    <div class="container reveal-up">
+        <h2 style="text-align:center; font-size:2.5rem; color:var(--color-glow); margin-bottom:var(--spacing-md);"
+            data-i18n="cta_title">Raqamli mavjudligingizni oshirishga tayyormisiz?</h2>
+
+        <style>
+            .social-contact-grid .social-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                padding: 16px;
+                border-radius: var(--radius-md);
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(167, 235, 242, 0.15);
+                color: #fff;
+                text-decoration: none;
+                transition: all var(--transition-smooth);
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .social-contact-grid .social-btn:hover {
+                background: rgba(84, 172, 191, 0.15);
+                border-color: var(--color-glow);
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(167, 235, 242, 0.25);
+                color: #fff;
+            }
+
+            .social-contact-grid .social-btn svg {
+                width: 20px;
+                height: 20px;
+                fill: currentColor;
+            }
+
+            @media (max-width: 600px) {
+                .social-contact-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
+
+        <div
+            style="background: rgba(1, 28, 64, 0.6); border-radius: var(--radius-lg); border: 1px solid rgba(167,235,242,0.3); padding: 40px; display:flex; flex-wrap:wrap; gap:40px; align-items:center; margin-top:40px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+            <div style="flex:1; min-width:300px;">
+                <h3 style="font-size:2rem; margin-bottom:15px; color:#fff;" data-i18n="contact_title">Biz bilan
+                    bog‘laning</h3>
+                <p style="opacity:0.8; line-height:1.6;" data-i18n="contact_desc">Loyiha bo'yicha yoki hamkorlik
+                    masalasida biz bilan quyidagi ijtimoiy tarmoqlar orqali bog'lanishingiz mumkin.</p>
+            </div>
+            <div style="flex:1; min-width:300px; display:grid; grid-template-columns:1fr 1fr; gap:15px;"
+                class="social-contact-grid">
+                <a href="https://instagram.com/uzbetech" target="_blank" class="social-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.169a1.18 1.18 0 100 2.36 1.18 1.18 0 000-2.36z" />
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://t.me/uzbetech" target="_blank" class="social-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.686c.223-.195-.054-.282-.346-.086l-6.4 4.02-2.76-.864c-.6-.185-.615-.6.125-.89l10.74-4.14c.496-.185.93.116.821.905z" />
+                    </svg>
+                    Telegram
+                </a>
+                <a href="mailto:info@uzbetech.local" class="social-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    Email
+                </a>
+                <a href="tel:+998947455345" class="social-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                    Phone
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

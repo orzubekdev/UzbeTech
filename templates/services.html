@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}UzbeTech - Services{% endblock %}
+
+{% block content %}
+<div style="min-height: 100vh; padding-top: 150px;" class="container page-transition">
+    <div style="text-align:center; margin-bottom: 80px;" class="reveal-up">
+        <h1 style="font-size:4rem; color:var(--color-glow);" data-i18n="srv_page_title">Enterprise Services</h1>
+        <p style="font-size:1.2rem; opacity:0.8; max-width: 600px; margin: 0 auto;" data-i18n="srv_page_desc">Architecting modern solutions with robust security and breathtaking design.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        <div class="glass-panel reveal-up" style="transform:translateY(20px);">
+            <div style="font-size:2.5rem; margin-bottom:15px; color:var(--color-accent);">🌐</div>
+            <h3 style="font-size: 1.8rem; margin-bottom:15px;" data-i18n="srv_p1_title">Next-Gen Web Platforms</h3>
+            <p style="opacity: 0.8; line-height: 1.8;" data-i18n="srv_p1_desc">We build highly secure, responsive, and performance-driven web platforms using the latest frameworks. From single-page applications to massive microservice frontends, every pixel is perfected.</p>
+        </div>
+        
+        <div class="glass-panel reveal-up" style="transform:translateY(40px);">
+            <div style="font-size:2.5rem; margin-bottom:15px; color:var(--color-accent);">🔐</div>
+            <h3 style="font-size: 1.8rem; margin-bottom:15px;" data-i18n="srv_p2_title">Cybersecurity & Identity</h3>
+            <p style="opacity: 0.8; line-height: 1.8;" data-i18n="srv_p2_desc">Implementation of robust Identity and Access Management (IAM) systems. JWT setups, deep DDoS protections, and complete penetration testing of your existing ecosystems.</p>
+        </div>
+
+        <div class="glass-panel reveal-up" style="transform:translateY(20px);">
+            <div style="font-size:2.5rem; margin-bottom:15px; color:var(--color-accent);">☁️</div>
+            <h3 style="font-size: 1.8rem; margin-bottom:15px;" data-i18n="srv_p3_title">Cloud Deployment</h3>
+            <p style="opacity: 0.8; line-height: 1.8;" data-i18n="srv_p3_desc">AWS and Azure CI/CD pipelines. Docker and Kubernetes integration for extremely fast auto-scaling under massive, unpredictable loads.</p>
+        </div>
+        
+        <div class="glass-panel reveal-up" style="transform:translateY(40px);">
+            <div style="font-size:2.5rem; margin-bottom:15px; color:var(--color-accent);">📱</div>
+            <h3 style="font-size: 1.8rem; margin-bottom:15px;" data-i18n="srv_p4_title">Cross-Platform Mobile</h3>
+            <p style="opacity: 0.8; line-height: 1.8;" data-i18n="srv_p4_desc">Development of beautifully crafted iOS and Android applications utilizing React Native and Flutter technologies, synchronized seamlessly with our enterprise backend systems.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
